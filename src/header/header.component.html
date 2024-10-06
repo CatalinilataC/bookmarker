@@ -1,0 +1,11 @@
+<mat-toolbar class="header-toolbar" color="primary">
+    <h2>Bookmarker</h2>
+    
+    <mat-form-field appearance="outline">
+        <input matInput placeholder="Filter bookmarks..." (input)="onSearch($event)">
+        <mat-icon matPrefix>search</mat-icon>
+      </mat-form-field>
+
+     <button mat-icon-button aria-label="Create bookmark">
+      <mat-icon>add</mat-icon>
+    </button>

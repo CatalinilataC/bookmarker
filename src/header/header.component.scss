@@ -1,0 +1,12 @@
+app-header {
+    .header-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 16px;
+
+        button, h2 {
+            margin-bottom: 16px;
+        }
+    }
+}
