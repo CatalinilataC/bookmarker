@@ -1,0 +1,36 @@
+bookmark-upsert {
+    mat-card {
+        // this should be extracted
+        max-width: 900px;
+        margin: auto;
+        margin-top: 24px;
+    }
+
+    .header-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 16px;
+
+        button, h2 {
+            cursor: pointer;
+            margin-bottom: 16px;
+        }
+    }
+
+    mat-card-content {
+        margin-top: 20px;
+        display: flex;
+
+        mat-form-field {
+            margin-left: 20px;
+        }
+    }
+
+    mat-card-actions {
+        button {
+            margin-left: auto;
+            margin-right: 20px;
+        }
+    }
+}
