@@ -1,0 +1,28 @@
+{
+    "bookmarks": [
+      {
+        "name": "Angular Docs",
+        "url": "https://angular.io",
+        "timestamp": 1728255229214,
+        "id": "1"
+      },
+      {
+        "name": "Angular Docs22",
+        "url": "https://angular.io",
+        "timestamp": 1728281023983,
+        "id": "2"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com",
+        "timestamp": 1728281036180,
+        "id": "3"
+      },
+      {
+        "id": "600876e2-fe6a-4694-b583-1a3e4d46dcaf",
+        "name": "http://localhost:4200/bookmarks/add",
+        "url": "http://localhost:4200/bookmarks/add",
+        "timestamp": 1728281335342
+      }
+    ]
+  }
