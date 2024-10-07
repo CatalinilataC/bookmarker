@@ -1,0 +1,23 @@
+<mat-list>
+  @for (bookmark of bookmarks; track bookmark.name) {
+  <mat-list-item>
+    <mat-icon matListItemIcon>bookmark</mat-icon>
+    <div matListItemTitle>{{bookmark.name}}
+    </div>
+    <a matListItemLine>{{bookmark.url}}</a>
+    <!-- <div class="item-content">
+      <h3 matLine>{{ bookmark.name }}</h3>
+      <a [href]="bookmark.url" matLine>{{ bookmark.url }}</a>
+    </div> -->
+
+    <button [routerLink]="['/bookmarks', 'edit', bookmark.id]" 
+            [state]="bookmark" 
+            (click)="onEdit()"
+            mat-icon-button>
+      <mat-icon>edit</mat-icon>
+    </button>
+  </mat-list-item>
+  } @empty {
+  <li>No bookmarks.</li>
+  }
+</mat-list>
