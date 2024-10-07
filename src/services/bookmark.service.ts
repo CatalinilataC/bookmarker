@@ -7,8 +7,8 @@ import { IBookmark } from './../models/bookmark.interface';
   providedIn: 'root',
 })
 export class BookmarkService {
-    private _apiUrl = 'http://localhost:3000/bookmarks';
-    private _http = inject(HttpClient);
+  private _apiUrl = 'http://localhost:3000/bookmarks';
+  private _http = inject(HttpClient);
 
   getBookmarks(): Observable<IBookmark[]> {
     return this._http.get<IBookmark[]>(this._apiUrl);

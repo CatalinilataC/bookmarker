@@ -1,11 +1,11 @@
 app-bookmark-items {
-    mat-list-item {
-        position: relative !important;
-        button {
-            // hack ;(
-            position: absolute !important;
-            right: 20px;
-            top: 16px;
-        }
+  mat-list-item {
+    position: relative !important;
+    button {
+      // hack ;(
+      position: absolute !important;
+      right: 20px;
+      top: 16px;
     }
+  }
 }

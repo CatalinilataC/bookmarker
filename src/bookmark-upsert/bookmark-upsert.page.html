@@ -1,39 +1,42 @@
 <!-- Took the liberty to "correct" the requirement. In the create/edit screen there is no need for filtering nor "+" -->
- <!-- Hence a different toolbar here -->
+<!-- Hence a different toolbar here -->
 <mat-toolbar class="header-toolbar" color="primary">
-    <h2 routerLink="/bookmarks">Bookmarker</h2>
-    
-     <button routerLink="/bookmarks" mat-icon-button aria-label="Create bookmark">
-      <mat-icon>arrow_back</mat-icon>
-    </button>
+  <h2 routerLink="/bookmarks">Bookmarker</h2>
+
+  <button routerLink="/bookmarks" mat-icon-button aria-label="Create bookmark">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
 </mat-toolbar>
 
 <mat-card appearance="outlined">
-    <mat-card-header>
-      <mat-card-title> Create New bookmark</mat-card-title>
-      <mat-card-subtitle>Type bookmark name and url</mat-card-subtitle>
-    </mat-card-header>
+  <mat-card-header>
+    <mat-card-title> {{bookmarkInstance ? ('Edit bookmark with id ' + bookmarkInstance?.id) : 'Create New bookmark' }}</mat-card-title>
+    <mat-card-subtitle>Type bookmark name and url</mat-card-subtitle>
+  </mat-card-header>
 
-    <mat-card-content [formGroup]="formGroup">
-        <mat-form-field appearance="outline">
-            <mat-label>Name</mat-label>
-            <input formControlName="name" matInput placeholder="Name">
-        </mat-form-field>
+  <mat-card-content [formGroup]="formGroup">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput placeholder="Name" />
+    </mat-form-field>
 
-        <mat-form-field appearance="outline">
-            <mat-label>URL</mat-label>
-            <input formControlName="url" matInput placeholder="URL">
-            <mat-error *ngIf="formGroup.get('url')!.hasError('pattern')">
-                URL must start with http:// or https://.
-            </mat-error>
-          
-        </mat-form-field>
-      </mat-card-content>
+    <mat-form-field appearance="outline">
+      <mat-label>URL</mat-label>
+      <input formControlName="url" matInput placeholder="URL" />
+      <mat-error *ngIf="formGroup.get('url')!.hasError('pattern')">
+        URL must start with http:// or https://.
+      </mat-error>
+    </mat-form-field>
+  </mat-card-content>
 
-    <mat-card-actions>
-        <mat-divider></mat-divider>
-      <button [disabled]="formGroup.pristine || formGroup.invalid"
-               (click)="submit()"        
-               mat-flat-button>Submit</button>
-    </mat-card-actions>
-  </mat-card>
+  <mat-card-actions>
+    <mat-divider></mat-divider>
+    <button
+      [disabled]="formGroup.pristine || formGroup.invalid"
+      (click)="submit()"
+      mat-flat-button
+    >
+      Submit
+    </button>
+  </mat-card-actions>
+</mat-card>
