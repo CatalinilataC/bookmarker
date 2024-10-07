@@ -1,0 +1,27 @@
+<app-header (search)="search$.next($event)" ></app-header>
+
+<div class="content">
+    @if (search$ | async) {
+        <h6>Search results</h6>
+        @let bookmarks = filteredData$ | async;
+        @if (bookmarks?.length) {
+            <app-bookmark-items [bookmarks]="bookmarks!"></app-bookmark-items>
+        } @else {
+            <span>No results</span>
+        } 
+        
+    } @else {
+        @if (mappedData$ | async; as data) {
+            <h6>Today</h6>
+            <app-bookmark-items [bookmarks]="data.todayData"></app-bookmark-items>
+        
+            <h6>Yesterday</h6>
+            <app-bookmark-items [bookmarks]="data.yesterdayData"></app-bookmark-items>
+        
+            <h6>Older</h6>
+            <app-bookmark-items [bookmarks]="data.olderData"></app-bookmark-items>
+        } @else {
+            <mat-spinner diameter="50"></mat-spinner>
+        }
+    } 
+</div>

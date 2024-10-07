@@ -1,0 +1,13 @@
+bookmarker-page {
+    .content {
+        max-width: 900px;
+        margin: auto;
+        margin-top: 24px;
+
+        mat-spinner {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+        }
+    }
+}

@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from "@angular/core";
+import { ChangeDetectionStrategy, Component, EventEmitter, Output, ViewEncapsulation } from "@angular/core";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { RouterModule } from "@angular/router";
 
 @Component({
     standalone: true,
@@ -13,7 +14,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
         MatButtonModule,
         MatIconModule,
         MatFormFieldModule,
-        MatInputModule
+        MatInputModule,
+        RouterModule,
     ],
     templateUrl: 'header.component.html',
     styleUrl: 'header.component.scss',
@@ -21,8 +23,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     encapsulation: ViewEncapsulation.None,
   })
   export class HeaderComponent {
+    @Output()
+    search = new EventEmitter<string>();
+
     onSearch(ev: Event) {
         const inputValue = (ev.target as HTMLInputElement).value;
-        console.log('ev=', inputValue);
+        this.search.emit(inputValue);
     }
   }
